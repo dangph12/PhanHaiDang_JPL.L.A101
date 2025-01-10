@@ -14,7 +14,7 @@ public enum MenuOption {
     private int value;
     private String label;
 
-    private MenuOption(int value, String label) {
+    MenuOption(int value, String label) {
         this.value = value;
         this.label = label;
     }
@@ -23,15 +23,8 @@ public enum MenuOption {
         return value;
     }
 
-    public void setValue(int value) {
-        this.value = value;
-    }
-
     public String getLabel() {
         return label;
     }
 
-    public void setLabel(String label) {
-        this.label = label;
-    }
 }
