@@ -10,7 +10,6 @@ public class View {
                 System.out.println(menuOption.getLabel());
             }
         }
-        System.out.println();
     }
 
     public View() {
