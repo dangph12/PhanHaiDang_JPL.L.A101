@@ -33,7 +33,8 @@ public class Controller {
 
             switch (menuChoice) {
                 case ADD_NEW_BOOK:
-                    System.out.println("Add a new book successfully.");
+                    bookService.addNewBook(publications);
+                    showPublications(publications);
                     break;
                 case ADD_NEW_MAGAZINE:
                     System.out.println("Add a new magazine successfully.");
