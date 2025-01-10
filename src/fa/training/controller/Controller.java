@@ -37,7 +37,8 @@ public class Controller {
                     showPublications(publications);
                     break;
                 case ADD_NEW_MAGAZINE:
-                    System.out.println("Add a new magazine successfully.");
+                    magazineService.addNewMagazine(publications);
+                    showPublications(publications);
                     break;
                 case LIST_SAME_PUBLICATION_YEAR_AND_PUBLISHER:
                     System.out.println("List all publications which have same publication's year and publisher successfully.");
