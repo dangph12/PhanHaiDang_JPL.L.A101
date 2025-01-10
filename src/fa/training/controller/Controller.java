@@ -64,6 +64,12 @@ public class Controller {
         }
     }
 
+    public void showPublications(List<Publication> publications) {
+        for (Publication publication: publications) {
+            System.out.println(publication.toString());
+        }
+    }
+
     public MenuOption getMenuOptionFromValue(int value) {
         for (MenuOption menuOption : MenuOption.values()) {
             if (menuOption.getValue() == value) {
