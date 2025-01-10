@@ -17,11 +17,11 @@ public class Magazine extends Publication {
 
     @Override
     public String toString() {
-        return "Magazine{" +
+        return "Magazine: " +
                 "author='" + author + '\'' +
                 ", volumn=" + volumn +
                 ", edition=" + edition +
-                "} " + super.toString();
+                ", " + super.toString();
     }
 
     public Magazine() {
