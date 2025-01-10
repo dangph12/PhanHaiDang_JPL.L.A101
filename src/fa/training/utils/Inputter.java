@@ -1,5 +1,8 @@
 package fa.training.utils;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Inputter {
@@ -38,4 +41,22 @@ public class Inputter {
         return result;
     }
 
+    public Date inputDate(String message) {
+        boolean isContinue = true;
+        Date result = new Date();
+
+        while (isContinue) {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+            // set lenient to false to apply strict date parsing
+            dateFormat.setLenient(false);
+            try {
+                result = dateFormat.parse(this.inputString(message));
+                isContinue = false;
+            }
+            catch (ParseException e) {
+                System.out.println("Invalid date format dd-MM-yyyy.");
+            }
+        }
+        return result;
+    }
 }
