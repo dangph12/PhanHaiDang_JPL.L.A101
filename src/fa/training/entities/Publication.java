@@ -1,5 +1,6 @@
 package fa.training.entities;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public abstract class Publication {
@@ -44,10 +45,10 @@ public abstract class Publication {
 
     @Override
     public String toString() {
-        return "Publication{" +
-                "publicationYear=" + publicationYear +
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        String formattedPublicationDate = dateFormat.format(publicationDate);
+        return "publicationYear=" + publicationYear +
                 ", publisher='" + publisher + '\'' +
-                ", publicationDate=" + publicationDate +
-                '}';
+                ", publicationDate=" + formattedPublicationDate;
     }
 }
