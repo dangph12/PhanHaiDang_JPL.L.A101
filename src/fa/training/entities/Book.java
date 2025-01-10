@@ -1,6 +1,5 @@
 package fa.training.entities;
 
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,27 +13,20 @@ public class Book extends Publication {
      */
     @Override
     public void display() {
-        System.out.println(this.toString());
+        System.out.println(this);
     }
 
     @Override
     public String toString() {
-        return "Book{" +
+        return "Book: " +
                 "isbn='" + isbn + '\'' +
                 ", author=" + author +
-                ", publicationPlace='" + publicationPlace + '\'' +
-                "} " + super.toString();
+                ", publicationPlace='" + publicationPlace + '\''
+                + ", " + super.toString();
     }
 
     public Book() {
         this.author = new HashSet<>();
-    }
-
-    public Book(int publicationYear, String publisher, Date publicationDate, String isbn, Set<String> author, String publicationPlace) {
-        super(publicationYear, publisher, publicationDate);
-        this.isbn = isbn;
-        this.author = author;
-        this.publicationPlace = publicationPlace;
     }
 
     public String getIsbn() {
