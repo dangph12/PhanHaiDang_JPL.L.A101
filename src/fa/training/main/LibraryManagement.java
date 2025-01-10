@@ -1,7 +1,10 @@
 package fa.training.main;
 
+import fa.training.controller.Controller;
+
 public class LibraryManagement {
     public static void main(String[] args) {
-        System.out.printf("Hello and welcome!");
+        Controller controller = new Controller();
+        controller.handleSelectMenuOption();
     }
 }
