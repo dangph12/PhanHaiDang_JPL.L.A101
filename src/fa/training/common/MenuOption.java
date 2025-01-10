@@ -11,8 +11,8 @@ public enum MenuOption {
     EXIT(8, "8. Exit the program"),
     INVALID_OPTION(-1, "Invalid option");
 
-    private int value;
-    private String label;
+    private final int value;
+    private final String label;
 
     MenuOption(int value, String label) {
         this.value = value;
