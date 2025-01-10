@@ -1,18 +1,29 @@
 package fa.training.controller;
 
 import fa.training.common.MenuOption;
+import fa.training.entities.Book;
+import fa.training.entities.Publication;
+import fa.training.services.BookService;
+import fa.training.services.MagazineService;
 import fa.training.utils.Inputter;
 import fa.training.view.View;
 
-public class Controller {
-    private View view = new View();
-    private Inputter inputter = new Inputter();
+import java.util.ArrayList;
+import java.util.List;
 
+public class Controller {
     public Controller() {
     }
 
     public void handleSelectMenuOption() {
+        View view = new View();
+        Inputter inputter = new Inputter();
+        BookService bookService = new BookService();
+        MagazineService magazineService = new MagazineService();
+
+        List<Publication> publications = new ArrayList<>();
         boolean isContinue = true;
+
         while (isContinue) {
 
             view.showMenuOptionExceptInvalidOption();
