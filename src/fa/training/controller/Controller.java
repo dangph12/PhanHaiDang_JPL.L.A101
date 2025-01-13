@@ -18,10 +18,11 @@ public class Controller {
         Inputter inputter = new Inputter();
         BookService bookService = new BookService();
         MagazineService magazineService = new MagazineService();
+        PublicationService publicationService = new PublicationService();
 
         List<Publication> publications = new ArrayList<>();
-        boolean isContinue = true;
 
+        boolean isContinue = true;
         while (isContinue) {
 
             view.showMenuOptionExceptInvalidOption();
@@ -39,19 +40,19 @@ public class Controller {
                     showPublications(publications);
                     break;
                 case LIST_SAME_PUBLICATION_YEAR_AND_PUBLISHER:
-                    System.out.println("List all publications which have same publication's year and publisher successfully.");
+                    publicationService.listSamePublicationYearAndPublisher(publications);
                     break;
                 case ADD_AN_AUTHOR_TO_BOOK:
-                    System.out.println("Add an author to book successfully.");
+                    bookService.addAnAuthorToBook(publications);
                     break;
                 case TOP_TEN_LARGEST_VOLUME_MAGAZINES:
-                    System.out.println("List top ten largest volume magazines successfully.");
+                    magazineService.listTopTenLargestVolumeMagazines(publications);
                     break;
                 case COUNT_PUBLICATION_BY_PUBLICATION_YEAR:
-                    System.out.println("Count Publication by publication's year.");
+                    publicationService.countPublicationByPublicationYear(publications);
                     break;
                 case SEARCH_BY_ISBN_OR_AUTHOR_OR_PUBLISHER:
-                    System.out.println("Search by isbn or author or publisher successfully.");
+                    publicationService.searchPublicationByIsbnOrAuthorOrPublisher(publications);
                     break;
                 case EXIT:
                     System.out.println("Exit program.");
