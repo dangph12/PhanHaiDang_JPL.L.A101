@@ -1,9 +1,12 @@
 package fa.training.services;
 
+import fa.training.entities.Book;
+import fa.training.entities.Magazine;
+import fa.training.entities.Publication;
 import fa.training.utils.Inputter;
 import fa.training.utils.Validator;
 
-import java.util.Date;
+import java.util.*;
 
 public class PublicationService {
 
