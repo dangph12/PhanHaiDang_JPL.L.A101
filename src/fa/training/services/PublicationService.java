@@ -13,6 +13,24 @@ public class PublicationService {
     private final Inputter inputter = new Inputter();
     private final Validator validator = new Validator();
 
+    public void listSamePublicationYearAndPublisher(List<Publication> publications) {
+        int publicationYear = inputPublicationYear();
+        String publisher = inputPublisher();
+        boolean isFound = false;
+        for (Publication publication : publications) {
+            boolean isEqual = (publication.getPublicationYear() == publicationYear) && (publication.getPublisher().equalsIgnoreCase(publisher));
+            if (isEqual) {
+                publication.display();
+                isFound = true;
+            }
+        }
+        if (!isFound) {
+            System.out.println("Publication not found");
+        } else {
+            System.out.println("List all publications which have same publication's year and publisher successfully.");
+        }
+    }
+
     public int inputPublicationYear() {
         int publicationYear = 0;
         boolean isContinue = true;
