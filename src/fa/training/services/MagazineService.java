@@ -3,10 +3,10 @@ package fa.training.services;
 import fa.training.entities.Magazine;
 import fa.training.entities.Publication;
 import fa.training.utils.Inputter;
-import fa.training.utils.Validator;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MagazineService {
 
