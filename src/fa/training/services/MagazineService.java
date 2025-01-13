@@ -16,18 +16,9 @@ public class MagazineService {
     public void addNewMagazine(List<Publication> publications) {
         Magazine magazine = createNewMagazine();
         publications.add(magazine);
-        publications.sort(new Comparator<Publication>() {
 
-            /**
-             * @param o1 the first object to be compared.
-             * @param o2 the second object to be compared.
-             * @return
-             */
-            @Override
-            public int compare(Publication o1, Publication o2) {
-                return o1.getPublicationDate().compareTo(o2.getPublicationDate());
-            }
-        });
+        publications.sort(Comparator.comparing(Publication::getPublicationDate));
+
         System.out.println("Add a new magazine successfully.");
     }
 
