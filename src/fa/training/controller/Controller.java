@@ -78,6 +78,17 @@ public class Controller {
         }
         return MenuOption.INVALID_OPTION;
     }
+
+    /**
+     * Show all publications in list for debug
+     * @param publications List of publications
+     */
+    public void showPublications(List<Publication> publications) {
+        for (Publication publication: publications) {
+            System.out.println(publication.toString());
+        }
+    }
+
     public Controller() {
     }
 }
