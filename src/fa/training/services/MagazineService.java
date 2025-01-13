@@ -40,7 +40,7 @@ public class MagazineService {
     public Magazine createNewMagazine() {
         Magazine magazine = new Magazine();
         magazine.setAuthor(this.inputAuthor());
-        magazine.setVolumn(this.inputVolumn());
+        magazine.setVolume(this.inputVolume());
         magazine.setEdition(this.inputEdition());
         magazine.setPublicationYear(publicationService.inputPublicationYear());
         magazine.setPublisher(publicationService.inputPublisher());
@@ -52,8 +52,8 @@ public class MagazineService {
         return inputter.inputString("Enter Author: ");
     }
 
-    public int inputVolumn() {
-        return inputter.inputInteger("Enter Volumn: ");
+    public int inputVolume() {
+        return inputter.inputInteger("Enter Volume: ");
     }
 
     public int inputEdition() {
