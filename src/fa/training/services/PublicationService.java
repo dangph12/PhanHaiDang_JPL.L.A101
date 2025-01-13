@@ -31,6 +31,26 @@ public class PublicationService {
         }
     }
 
+    public void countPublicationByPublicationYear(List<Publication> publications) {
+        Map<Integer,Integer> map = new HashMap<>();
+
+        for (Publication publication: publications) {
+            // if not found then put new
+            // or else inc count by 1
+            map.compute(publication.getPublicationYear(), (k, countOfPublicationYear) -> (countOfPublicationYear == null) ? 1 : countOfPublicationYear + 1);
+        }
+
+        if (map.isEmpty()) {
+            System.out.println("Publication not found");
+            return;
+        }
+
+        System.out.println("Year : Count");
+        for (Map.Entry<Integer,Integer> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + " : " + entry.getValue());
+        }
+    }
+
     public int inputPublicationYear() {
         int publicationYear = 0;
         boolean isContinue = true;
