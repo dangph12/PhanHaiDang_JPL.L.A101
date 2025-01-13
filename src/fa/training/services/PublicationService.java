@@ -100,12 +100,12 @@ public class PublicationService {
     }
 
     public String inputPublisher() {
-        String publisher = inputter.inputString("Enter publisher: ");
-        return publisher;
+        return inputter.inputString("Enter publisher: ");
     }
 
     public Date inputPublicationDate() {
-        Date publicationDate = inputter.inputDate("Enter publication date (dd-MM-yyyy): ");
-        return publicationDate;
+        return inputter.inputDate("Enter publication date (dd-MM-yyyy): ");
+    }
+
     }
 }
