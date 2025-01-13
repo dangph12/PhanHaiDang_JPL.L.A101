@@ -112,6 +112,16 @@ public class BookService {
         return false;
     }
 
+    private Book findBookByIsbn(List<Publication> publications) {
+        String isbn = inputIsbn();
+        for (Publication publication: publications) {
+            if (((Book) publication).getIsbn().contains(isbn)) {
+                return (Book) publication;
+            }
+        }
+        return null;
+    }
+
     public BookService() {
     }
 }
