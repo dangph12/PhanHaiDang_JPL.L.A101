@@ -22,6 +22,21 @@ public class MagazineService {
         System.out.println("Add a new magazine successfully.");
     }
 
+    public void listTopTenLargestVolumeMagazines(List<Publication> publications) {
+        List<Publication> magazines = publications.stream().filter(p -> p instanceof Magazine).sorted((o1, o2) -> ((Magazine) o2).getVolume() - ((Magazine) o1).getVolume()).collect(Collectors.toList());
+
+        if (magazines.isEmpty()) {
+            System.out.println("No magazines found.");
+            return;
+        }
+        System.out.println("Top 10 magazines found.");
+        int i = 0;
+        while (i < 10 && i < magazines.size()) {
+            magazines.get(i).display();
+            i++;
+        }
+    }
+
     public Magazine createNewMagazine() {
         Magazine magazine = new Magazine();
         magazine.setAuthor(this.inputAuthor());
