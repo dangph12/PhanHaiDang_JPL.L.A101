@@ -68,12 +68,6 @@ public class Controller {
         }
     }
 
-    public void showPublications(List<Publication> publications) {
-        for (Publication publication: publications) {
-            System.out.println(publication.toString());
-        }
-    }
-
     /**
      * Get menu option from integer value
      * @param value an integer value
