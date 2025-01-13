@@ -45,7 +45,7 @@ public class BookService {
 
     public Book createNewBook(List<Publication> publications) {
         Book book = new Book();
-        book.setIsbn(this.inputIsbn(publications));
+        book.setIsbn(this.inputDistinctIsbn(publications));
         book.setAuthor(this.inputAuthor());
         book.setPublicationPlace(this.inputPublicationPlace());
         book.setPublicationYear(publicationService.inputPublicationYear());
@@ -54,7 +54,7 @@ public class BookService {
         return book;
     }
 
-    public String inputIsbn(List<Publication> publications) {
+    public String inputIsbn() {
         String isbn = "";
         boolean isContinue = true;
         while (isContinue) {
@@ -62,7 +62,19 @@ public class BookService {
             if (!validator.isValidIsbn(isbn)) {
                 System.out.println("Invalid ISBN.");
             }
-            else if (isDuplicateIsbn(isbn, publications)) {
+            else {
+                isContinue = false;
+            }
+        }
+        return isbn;
+    }
+
+    public String inputDistinctIsbn(List<Publication> publications) {
+        String isbn = "";
+        boolean isContinue = true;
+        while (isContinue) {
+            isbn = this.inputIsbn();
+            if (isDuplicateIsbn(isbn, publications)) {
                 System.out.println("ISBN already exists.");
             }
             else {
