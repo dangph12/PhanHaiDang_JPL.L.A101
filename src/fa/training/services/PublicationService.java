@@ -111,5 +111,15 @@ public class PublicationService {
         return magazine.getAuthor().equalsIgnoreCase(search);
     }
 
+    public boolean isMatchingBook(Book book, String search) {
+        if ((book.getIsbn().equalsIgnoreCase(search))) {
+            return true;
+        }
+        for (String author: book.getAuthor()) {
+            if (author.equalsIgnoreCase(search)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
