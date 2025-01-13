@@ -1,10 +1,10 @@
 package fa.training.controller;
 
 import fa.training.common.MenuOption;
-import fa.training.entities.Book;
 import fa.training.entities.Publication;
 import fa.training.services.BookService;
 import fa.training.services.MagazineService;
+import fa.training.services.PublicationService;
 import fa.training.utils.Inputter;
 import fa.training.view.View;
 
