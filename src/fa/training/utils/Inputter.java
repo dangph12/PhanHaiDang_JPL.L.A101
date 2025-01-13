@@ -8,6 +8,11 @@ import java.util.Scanner;
 public class Inputter {
     private final static Scanner scanner = new Scanner(System.in);
 
+    /**
+     * Input an integer value from terminal
+     * @param message Instruction to input
+     * @return An valid integer value
+     */
     public int inputInteger(String message) {
         boolean isContinue = true;
         int result = 0;
@@ -23,6 +28,11 @@ public class Inputter {
         return result;
     }
 
+    /**
+     * Input a string from terminal
+     * @param message Instruction to input
+     * @return A non-empty string
+     */
     public String inputString(String message) {
         boolean isContinue = true;
         String result = "";
@@ -41,6 +51,11 @@ public class Inputter {
         return result;
     }
 
+    /**
+     * Input a date from terminal
+     * @param message Instruction to input
+     * @return A date in format dd-MM-yyyy
+     */
     public Date inputDate(String message) {
         boolean isContinue = true;
         Date result = new Date();
