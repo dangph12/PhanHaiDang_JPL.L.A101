@@ -12,8 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Controller {
-    public Controller() {
-    }
 
     public void handleSelectMenuOption() {
         View view = new View();
@@ -79,5 +77,7 @@ public class Controller {
             }
         }
         return MenuOption.INVALID_OPTION;
+    }
+    public Controller() {
     }
 }
