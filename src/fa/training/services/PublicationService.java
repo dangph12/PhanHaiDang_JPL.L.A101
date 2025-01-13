@@ -89,9 +89,9 @@ public class PublicationService {
         int publicationYear = 0;
         boolean isContinue = true;
         while (isContinue) {
-            publicationYear = inputter.inputInteger("Enter publication year (year >= 1900): ");
+            publicationYear = inputter.inputInteger("Enter publication year (year > 1752): ");
             if (!validator.isValidYear(publicationYear)) {
-                System.out.println("Enter year after 1900");
+                System.out.println("Enter year after 1752");
             } else {
                 isContinue = false;
             }
