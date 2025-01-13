@@ -11,7 +11,6 @@ import java.util.stream.Collectors;
 public class MagazineService {
 
     private final Inputter inputter = new Inputter();
-    private final Validator validator = new Validator();
     private final PublicationService publicationService = new PublicationService();
 
     public void addNewMagazine(List<Publication> publications) {
