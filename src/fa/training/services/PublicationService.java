@@ -107,5 +107,9 @@ public class PublicationService {
         return inputter.inputDate("Enter publication date (dd-MM-yyyy): ");
     }
 
+    public boolean isMatchingMagazine(Magazine magazine, String search) {
+        return magazine.getAuthor().equalsIgnoreCase(search);
+    }
+
     }
 }
