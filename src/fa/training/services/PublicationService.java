@@ -51,6 +51,40 @@ public class PublicationService {
         }
     }
 
+    public void searchPublicationByIsbnOrAuthorOrPublisher(List<Publication> publications) {
+        String search = inputter.inputString("Enter search term: ");
+        Set<Publication> foundPublications = new HashSet<>();
+        for (Publication publication: publications) {
+            if (publication.getPublisher().equalsIgnoreCase(search)) {
+                foundPublications.add(publication);
+            }
+
+            if (publication instanceof Book) {
+                Book book = (Book) publication;
+                if (isMatchingBook(book, search)) {
+                    foundPublications.add(publication);
+                }
+            }
+
+            if (publication instanceof Magazine) {
+                Magazine magazine = (Magazine) publication;
+                if (isMatchingMagazine(magazine, search)) {
+                    foundPublications.add(publication);
+                }
+            }
+        }
+
+        if (foundPublications.isEmpty()) {
+            System.out.println("Publication not found");
+            return;
+        }
+
+        for (Publication publication: foundPublications) {
+            publication.display();
+        }
+        System.out.println("Search by isbn or author or publisher successfully.");
+    }
+
     public int inputPublicationYear() {
         int publicationYear = 0;
         boolean isContinue = true;
