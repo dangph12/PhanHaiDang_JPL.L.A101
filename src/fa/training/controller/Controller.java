@@ -13,6 +13,9 @@ import java.util.List;
 
 public class Controller {
 
+    /**
+     * Entry point of the program
+     */
     public void handleSelectMenuOption() {
         View view = new View();
         Inputter inputter = new Inputter();
@@ -71,6 +74,11 @@ public class Controller {
         }
     }
 
+    /**
+     * Get menu option from integer value
+     * @param value an integer value
+     * @return Menu option
+     */
     public MenuOption getMenuOptionFromValue(int value) {
         for (MenuOption menuOption : MenuOption.values()) {
             if (menuOption.getValue() == value) {
