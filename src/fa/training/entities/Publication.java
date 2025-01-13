@@ -13,12 +13,6 @@ public abstract class Publication {
     public Publication() {
     }
 
-    public Publication(int publicationYear, String publisher, Date publicationDate) {
-        this.publicationYear = publicationYear;
-        this.publisher = publisher;
-        this.publicationDate = publicationDate;
-    }
-
     public int getPublicationYear() {
         return publicationYear;
     }
