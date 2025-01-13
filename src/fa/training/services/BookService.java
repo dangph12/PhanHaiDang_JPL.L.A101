@@ -103,6 +103,15 @@ public class BookService {
         return inputter.inputString("Enter Publication Place: ");
     }
 
+    public boolean isExistedBook(List<Publication> publications) {
+        for (Publication publication: publications) {
+            if (publication instanceof Book) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public BookService() {
     }
 }
