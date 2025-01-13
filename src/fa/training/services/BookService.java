@@ -21,6 +21,28 @@ public class BookService {
         System.out.println("Add a new book successfully.");
     }
 
+    public void addAnAuthorToBook(List<Publication> publications) {
+
+        if (!this.isExistedBook(publications)) {
+            System.out.println("Not existed book.");
+            return;
+        }
+
+        Book book = findBookByIsbn(publications);
+
+        if (book == null) {
+            System.out.println("Book not found.");
+            return;
+        }
+
+        String author = inputter.inputString("Enter New Author Name: ");
+        if (book.getAuthor().add(author)) {
+            System.out.println("Add successfully");
+        } else {
+            System.out.println("Author existed");
+        }
+    }
+
     public Book createNewBook(List<Publication> publications) {
         Book book = new Book();
         book.setIsbn(this.inputIsbn(publications));
