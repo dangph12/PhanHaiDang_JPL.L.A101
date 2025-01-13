@@ -1,10 +1,8 @@
 package fa.training.entities;
 
-import java.util.Date;
-
 public class Magazine extends Publication {
     private String author;
-    private int volumn;
+    private int volume;
     private int edition;
 
     /**
@@ -19,20 +17,13 @@ public class Magazine extends Publication {
     public String toString() {
         return "Magazine: " +
                 "author='" + author + '\'' +
-                ", volumn=" + volumn +
+                ", volume=" + volume +
                 ", edition=" + edition +
                 ", " + super.toString();
     }
 
     public Magazine() {
 
-    }
-
-    public Magazine(int publicationYear, String publisher, Date publicationDate, String author, int volumn, int edition) {
-        super(publicationYear, publisher, publicationDate);
-        this.author = author;
-        this.volumn = volumn;
-        this.edition = edition;
     }
 
     public String getAuthor() {
@@ -43,12 +34,12 @@ public class Magazine extends Publication {
         this.author = author;
     }
 
-    public int getVolumn() {
-        return volumn;
+    public int getVolume() {
+        return volume;
     }
 
-    public void setVolumn(int volumn) {
-        this.volumn = volumn;
+    public void setVolume(int volume) {
+        this.volume = volume;
     }
 
     public int getEdition() {
