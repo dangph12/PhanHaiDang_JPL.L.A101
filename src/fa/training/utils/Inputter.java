@@ -54,14 +54,15 @@ public class Inputter {
     /**
      * Input a date from terminal
      * @param message Instruction to input
-     * @return A date in format dd-MM-yyyy
+     * @param pattern Pattern for date format
+     * @return A date in pattern format
      */
-    public Date inputDate(String message) {
+    public Date inputDate(String message, String pattern) {
         boolean isContinue = true;
         Date result = new Date();
 
         while (isContinue) {
-            SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+            SimpleDateFormat dateFormat = new SimpleDateFormat(pattern);
             // set lenient to false to apply strict date parsing
             dateFormat.setLenient(false);
             try {
@@ -69,7 +70,7 @@ public class Inputter {
                 isContinue = false;
             }
             catch (ParseException e) {
-                System.out.println("Invalid date format dd-MM-yyyy.");
+                System.out.println("Invalid date format " + pattern);
             }
         }
         return result;

@@ -128,7 +128,7 @@ public class PublicationService {
      * @return a publication date
      */
     public Date inputPublicationDate() {
-        return inputter.inputDate("Enter publication date (dd-MM-yyyy): ");
+        return inputter.inputDate("Enter publication date (dd-MM-yyyy): ", "dd-MM-yyyy");
     }
 
     /**
