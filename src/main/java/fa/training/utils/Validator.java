@@ -4,6 +4,7 @@ public class Validator {
 
     /**
      * Check if year after 1752
+     *
      * @param year an integer value
      * @return true if year after 1752
      */
@@ -13,6 +14,7 @@ public class Validator {
 
     /**
      * Check if valid isbn only contain 10-17 digit and '-' quotes
+     *
      * @param isbn a string isbn
      * @return true if isbn only contain 10-17 digit and '-' quotes
      */

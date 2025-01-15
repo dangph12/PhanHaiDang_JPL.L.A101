@@ -15,8 +15,12 @@ public class BookService {
     private final Validator validator = new Validator();
     private final PublicationService publicationService = new PublicationService();
 
+    public BookService() {
+    }
+
     /**
      * Add a new book to list of publication
+     *
      * @param publications List of publication
      */
     public void addNewBook(List<Publication> publications) {
@@ -27,6 +31,7 @@ public class BookService {
 
     /**
      * Add an author to book
+     *
      * @param publications List of publication
      */
     public void addAnAuthorToBook(List<Publication> publications) {
@@ -53,6 +58,7 @@ public class BookService {
 
     /**
      * Create a new book
+     *
      * @param publications List of publication
      * @return a book
      */
@@ -69,6 +75,7 @@ public class BookService {
 
     /**
      * Input isbn
+     *
      * @return an isbn
      */
     public String inputIsbn() {
@@ -78,8 +85,7 @@ public class BookService {
             isbn = inputter.inputString("Enter ISBN: ");
             if (!validator.isValidIsbn(isbn)) {
                 System.out.println("Invalid ISBN.");
-            }
-            else {
+            } else {
                 isContinue = false;
             }
         }
@@ -88,6 +94,7 @@ public class BookService {
 
     /**
      * Input an isbn which not existed in list of publication
+     *
      * @param publications List of publication
      * @return a distinct isbn
      */
@@ -98,8 +105,7 @@ public class BookService {
             isbn = this.inputIsbn();
             if (isDuplicateIsbn(isbn, publications)) {
                 System.out.println("ISBN already exists.");
-            }
-            else {
+            } else {
                 isContinue = false;
             }
         }
@@ -108,12 +114,13 @@ public class BookService {
 
     /**
      * Check if an isbn existed in list of publication
-     * @param isbn an isbn
+     *
+     * @param isbn         an isbn
      * @param publications List of publication
      * @return true if an isbn existed in list of publication
      */
     public boolean isDuplicateIsbn(String isbn, List<Publication> publications) {
-        for (Publication publication: publications) {
+        for (Publication publication : publications) {
             if (((Book) publication).getIsbn().equalsIgnoreCase(isbn)) {
                 return true;
             }
@@ -123,6 +130,7 @@ public class BookService {
 
     /**
      * Input an author
+     *
      * @return a set of author
      */
     public Set<String> inputAuthor() {
@@ -133,6 +141,7 @@ public class BookService {
 
     /**
      * Input a publication place
+     *
      * @return a publication place
      */
     public String inputPublicationPlace() {
@@ -141,11 +150,12 @@ public class BookService {
 
     /**
      * Check if any book existed in list of publication
+     *
      * @param publications List of publication
      * @return true if any book existed in list of publication
      */
     public boolean isExistedBook(List<Publication> publications) {
-        for (Publication publication: publications) {
+        for (Publication publication : publications) {
             if (publication instanceof Book) {
                 return true;
             }
@@ -155,19 +165,17 @@ public class BookService {
 
     /**
      * Find a book by inputted isbn
+     *
      * @param publications List of publication
      * @return a found book, or else return null
      */
     private Book findBookByIsbn(List<Publication> publications) {
         String isbn = inputIsbn();
-        for (Publication publication: publications) {
+        for (Publication publication : publications) {
             if (((Book) publication).getIsbn().contains(isbn)) {
                 return (Book) publication;
             }
         }
         return null;
-    }
-
-    public BookService() {
     }
 }

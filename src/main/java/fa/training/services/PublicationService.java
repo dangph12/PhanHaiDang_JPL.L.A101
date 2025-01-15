@@ -15,6 +15,7 @@ public class PublicationService {
 
     /**
      * List all publications which have same inputted publication's year and publisher
+     *
      * @param publications List of publication
      */
     public void listSamePublicationYearAndPublisher(List<Publication> publications) {
@@ -37,12 +38,13 @@ public class PublicationService {
 
     /**
      * Count publication by publication's year
+     *
      * @param publications List of publication
      */
     public void countPublicationByPublicationYear(List<Publication> publications) {
-        Map<Integer,Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
 
-        for (Publication publication: publications) {
+        for (Publication publication : publications) {
             // if not found then put new
             // or else inc count by 1
             map.compute(publication.getPublicationYear(), (k, countOfPublicationYear) -> (countOfPublicationYear == null) ? 1 : countOfPublicationYear + 1);
@@ -54,19 +56,20 @@ public class PublicationService {
         }
 
         System.out.println("Year : Count");
-        for (Map.Entry<Integer,Integer> entry : map.entrySet()) {
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
             System.out.println(entry.getKey() + " : " + entry.getValue());
         }
     }
 
     /**
      * Search publication by isbn or author or publisher
+     *
      * @param publications List of publication
      */
     public void searchPublicationByIsbnOrAuthorOrPublisher(List<Publication> publications) {
         String search = inputter.inputString("Enter search term: ");
         Set<Publication> foundPublications = new HashSet<>();
-        for (Publication publication: publications) {
+        for (Publication publication : publications) {
             if (publication.getPublisher().equalsIgnoreCase(search)) {
                 foundPublications.add(publication);
             }
@@ -91,7 +94,7 @@ public class PublicationService {
             return;
         }
 
-        for (Publication publication: foundPublications) {
+        for (Publication publication : foundPublications) {
             publication.display();
         }
         System.out.println("Search by isbn or author or publisher successfully.");
@@ -99,6 +102,7 @@ public class PublicationService {
 
     /**
      * Input publication year
+     *
      * @return a publication year
      */
     public int inputPublicationYear() {
@@ -117,6 +121,7 @@ public class PublicationService {
 
     /**
      * Input publisher
+     *
      * @return a publisher
      */
     public String inputPublisher() {
@@ -125,6 +130,7 @@ public class PublicationService {
 
     /**
      * Input publication date
+     *
      * @return a publication date
      */
     public Date inputPublicationDate() {
@@ -133,8 +139,9 @@ public class PublicationService {
 
     /**
      * Check if magazine's attributes match with search term
+     *
      * @param magazine a magazine
-     * @param search a string search term
+     * @param search   a string search term
      * @return true if magazine's attributes match with search term
      */
     public boolean isMatchingMagazine(Magazine magazine, String search) {
@@ -143,7 +150,8 @@ public class PublicationService {
 
     /**
      * Check if book's attributes match with search term
-     * @param book a book
+     *
+     * @param book   a book
      * @param search a string search term
      * @return true if book's attributes match with search term
      */
@@ -151,7 +159,7 @@ public class PublicationService {
         if ((book.getIsbn().equalsIgnoreCase(search))) {
             return true;
         }
-        for (String author: book.getAuthor()) {
+        for (String author : book.getAuthor()) {
             if (author.equalsIgnoreCase(search)) {
                 return true;
             }

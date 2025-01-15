@@ -13,6 +13,9 @@ import java.util.List;
 
 public class Controller {
 
+    public Controller() {
+    }
+
     /**
      * Entry point of the program
      */
@@ -70,6 +73,7 @@ public class Controller {
 
     /**
      * Get menu option from integer value
+     *
      * @param value an integer value
      * @return Menu option
      */
@@ -84,14 +88,12 @@ public class Controller {
 
     /**
      * Show all publications in list for debug
+     *
      * @param publications List of publications
      */
     public void showPublications(List<Publication> publications) {
-        for (Publication publication: publications) {
+        for (Publication publication : publications) {
             System.out.println(publication.toString());
         }
-    }
-
-    public Controller() {
     }
 }

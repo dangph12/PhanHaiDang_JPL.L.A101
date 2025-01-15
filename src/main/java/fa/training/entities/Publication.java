@@ -8,10 +8,10 @@ public abstract class Publication {
     private String publisher;
     private Date publicationDate;
 
-    public abstract void display();
-
     public Publication() {
     }
+
+    public abstract void display();
 
     public int getPublicationYear() {
         return publicationYear;

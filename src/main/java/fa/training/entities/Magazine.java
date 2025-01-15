@@ -5,6 +5,10 @@ public class Magazine extends Publication {
     private int volume;
     private int edition;
 
+    public Magazine() {
+
+    }
+
     /**
      *
      */
@@ -20,10 +24,6 @@ public class Magazine extends Publication {
                 ", volume=" + volume +
                 ", edition=" + edition +
                 ", " + super.toString();
-    }
-
-    public Magazine() {
-
     }
 
     public String getAuthor() {

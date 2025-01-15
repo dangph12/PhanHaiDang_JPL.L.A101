@@ -10,6 +10,7 @@ public class Inputter {
 
     /**
      * Input an integer value from terminal
+     *
      * @param message Instruction to input
      * @return An valid integer value
      */
@@ -30,6 +31,7 @@ public class Inputter {
 
     /**
      * Input a string from terminal
+     *
      * @param message Instruction to input
      * @return A non-empty string
      */
@@ -53,6 +55,7 @@ public class Inputter {
 
     /**
      * Input a date from terminal
+     *
      * @param message Instruction to input
      * @param pattern Pattern for date format
      * @return A date in pattern format
@@ -68,8 +71,7 @@ public class Inputter {
             try {
                 result = dateFormat.parse(this.inputString(message));
                 isContinue = false;
-            }
-            catch (ParseException e) {
+            } catch (ParseException e) {
                 System.out.println("Invalid date format " + pattern);
             }
         }

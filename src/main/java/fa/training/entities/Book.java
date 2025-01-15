@@ -8,6 +8,10 @@ public class Book extends Publication {
     private Set<String> author;
     private String publicationPlace;
 
+    public Book() {
+        this.author = new HashSet<>();
+    }
+
     /**
      *
      */
@@ -23,10 +27,6 @@ public class Book extends Publication {
                 ", author=" + author +
                 ", publicationPlace='" + publicationPlace + '\''
                 + ", " + super.toString();
-    }
-
-    public Book() {
-        this.author = new HashSet<>();
     }
 
     public String getIsbn() {

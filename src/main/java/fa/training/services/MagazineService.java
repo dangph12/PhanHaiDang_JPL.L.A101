@@ -15,6 +15,7 @@ public class MagazineService {
 
     /**
      * Add a new magazine to list of publication
+     *
      * @param publications List of publication
      */
     public void addNewMagazine(List<Publication> publications) {
@@ -28,6 +29,7 @@ public class MagazineService {
 
     /**
      * List top ten largest volume magazines
+     *
      * @param publications List of publication
      */
     public void listTopTenLargestVolumeMagazines(List<Publication> publications) {
@@ -47,6 +49,7 @@ public class MagazineService {
 
     /**
      * Create a new magazine
+     *
      * @return a magazine
      */
     public Magazine createNewMagazine() {
@@ -62,6 +65,7 @@ public class MagazineService {
 
     /**
      * Input author
+     *
      * @return a author
      */
     public String inputAuthor() {
@@ -70,6 +74,7 @@ public class MagazineService {
 
     /**
      * Input volume
+     *
      * @return a volume
      */
     public int inputVolume() {
@@ -78,6 +83,7 @@ public class MagazineService {
 
     /**
      * Input edition
+     *
      * @return a edition
      */
     public int inputEdition() {
